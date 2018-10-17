@@ -20,6 +20,9 @@ const UserSchema = new Schema({
     date:{
         type:Date,
         default:Date.now()
+    },
+    identity:{
+        type:String
     }
 });
 
