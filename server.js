@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 //连接数据库
 const db = require("./config/keys").mongoURL;
 mongoose.connect(db)
-    .then( () => {console.log("MongoDb connect successful!");}) 
+    .then( () => {}) 
     .catch( (err) => {console.log(err);});
 
 //路由
