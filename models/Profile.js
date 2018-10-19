@@ -10,15 +10,15 @@ const ProfileSchema = new Schema({
     },
     incode:{
         type:String,
-        required:true
+        // required:true
     },
     expend:{
         type:String,
-        required:true
+        // required:true
     },
     cash:{
         type:String,
-        required:true
+        // required:true
     },
     remark:{
         type:String
