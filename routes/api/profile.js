@@ -62,16 +62,29 @@ router.post("/edit/:id",passport.authenticate("jwt",{session:false}),(req,res)=>
     if(req.body.remark){profileFields.remark = req.body.remark}
 
     Profile.findOneAndUpdate(
-        {"_id":req.params.id},
+        {_id:req.params.id},
         {$set:profileFields},
         {new:true}
     )
     .then((profile)=>{
-        res.json({"status":1,"profile":req});
+        res.json({"status":1,"profile":profile});
     })
     .catch((err)=>{
        res.json({"err":err});
     })
 })
     
+router.delete("/delete/:id",passport.authenticate("jwt",{session:false}),(req,res)=>{
+    Profile.findOneAndDelete({"_id":req.params.id})
+    .then((profile)=>{
+        profile.save()
+        .then((profile)=>{
+            res.json({"status":1,"msg":"删除成功"});
+        })
+    })
+    .catch((err)=>{
+        res.json({"status":-1,"err":err,"msg":"删除失败"});
+    })
+})
+
 module.exports = router;
