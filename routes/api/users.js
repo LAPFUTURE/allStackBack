@@ -43,14 +43,13 @@ router.post("/login",(req,res)=>{
     User.findOne({email:req.body.email})
         .then((user)=>{
             if(user.password === md5Password.toString()){
-                console.log(user._id);
                 const rule = {
                     id:user._id,
                     name:user.name,
                     avatar:user.avatar,
                     identity:user.identity
                 };
-                jwt.sign(rule,key.Key,{expiresIn:1800},(err,token)=>{
+                jwt.sign(rule,key.Key,{expiresIn:3600},(err,token)=>{
                         if(!err){
                             return res.json({"status":1,"msg":"登录成功","token":"Bearer " + token});
                         }else{
