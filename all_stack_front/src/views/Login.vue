@@ -64,8 +64,10 @@
                             .then((res) => {
                                 let { token } = res.data;
                                 localStorage.setItem('eleToken', token);//存储token
-                                let decoded = jwt_decode(token);
-                                console.log(decoded);
+                                let decoded = jwt_decode(token);//解析token
+                                this.$store.dispatch('setAuthenticated',!this.isEmpty(decoded)); 
+                                this.$store.dispatch('setUser',decoded);
+                                
                                 this.$message({
                                     message: '登录成功',
                                     type: 'success'
@@ -75,8 +77,16 @@
                     }
                 })
             },
-            resetForm(formName) {
+            resetForm(formName){
                 this.$refs[formName].resetFields();
+            },
+            isEmpty(value){
+                return(
+                    value === undefined || 
+                    value === null ||
+                    (typeof value === "object" && Object.keys(value).length === 0) ||
+                    (typeof value === "string" && value.trim().length === 0)
+                )
             }
         }
     }
