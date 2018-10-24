@@ -15,8 +15,8 @@ const state = {
 }
 
 const getters = {
-  isAuthenticated:(state)=>{state.isAuthenticated},
-  user:(state)=>{state.user}
+  isAuthenticated:(state)=>{return state.isAuthenticated},
+  user:(state)=>{return state.user}
 }
 
 const mutations = {
@@ -36,6 +36,10 @@ const actions ={
   },
   setUser:({commit},user)=>{
     commit(types.SET_USER,user);
+  },
+  clearCurrentState:({commit})=>{
+    commit(types.SET_AUTHENTICATED,false);
+    commit(types.SET_USER,null);
   }
 }
 export default new Vuex.Store({
