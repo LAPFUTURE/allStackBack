@@ -3,7 +3,7 @@
         <img :src="user.avatar" class="avatar">
         <el-row>
             <el-col :span="2" class="logo-containner">
-               <img src="../assets/github.jpg" class="logo">
+               <img src="../assets/bg.jpg" class="logo">
             </el-col>
             <el-col :span="19" class="center">
                <div class="title">LAP ManageSystem</div>
@@ -42,7 +42,7 @@
                 }
             },
             showInfoList(){
-                console.log("personal info");
+                this.$router.push("/infoshow");
             },
             logout(){
                 localStorage.removeItem("eleTOken");
