@@ -64,7 +64,7 @@
         height: 60px;
         min-width: 600px;
         margin-right: 60px;
-        background: rgb(64, 158, 255);
+        background: #409EFF;
     }
     .avatar{
         height:60px;
