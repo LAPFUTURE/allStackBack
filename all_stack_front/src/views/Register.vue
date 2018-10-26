@@ -1,8 +1,7 @@
 <template>
     <div class="register">
         <div class="form_container">
-                <div class="title">Manage System(FoodSelector)</div>
-                <div class="content">
+                <div class="title">Manage System</div>
                     <el-form :model="registerUser" :rules="rules" ref="registerUser" label-width="80px" class="demo-ruleForm">
                         <el-form-item label="用户名" prop="name"><el-input v-model="registerUser.name" aria-placeholder="请输入用户名"></el-input></el-form-item>
                         <el-form-item label="邮箱" prop="email"><el-input v-model="registerUser.email"></el-input></el-form-item>
@@ -16,10 +15,10 @@
                         </el-form-item>
                         <el-form-item>
                             <el-button type="primary" @click="submitForm('registerUser')">注册</el-button>
-                            <el-button @click="resetForm('registerUser')">重置</el-button>
+                            <el-button type="warning" @click="resetForm('registerUser')">重置</el-button>
+                            <el-button type="success"><router-link to="/login">登录</router-link></el-button>
                         </el-form-item>
                     </el-form>
-                </div>
         </div>
     </div>
 </template>
@@ -120,8 +119,10 @@
     }
     
     .form_container{
-        width: 450px;
-        height: 350px;
+        background-color: rgb(244,244,244);
+        opacity: 0.95;
+        width: 675px;
+        height: 450px;
         margin:3.5% auto;
         padding: 50px;
         border-radius: 5px;
@@ -135,13 +136,13 @@
        font-family: 'Microsoft YaHei';
        font-weight: 600;
        font-size: 26px;
-       color: #ccc;
+       color: #888888;
+
        white-space: nowrap;
     }
-    .form_container .content{
-       background-color: rgb(245,245,245);
-       border-radius: 5px;
-       padding:40px 35px 20px 25px; 
+    a{
+        text-decoration: none;
+        color: white;
     }
 
     

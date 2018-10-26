@@ -1,8 +1,7 @@
 <template>
     <div class="register">
         <div class="form_container">
-            <div class="title">Manage System(FoodSelector)</div>
-            <div class="content">
+            <div class="title">Manage System</div>
                 <el-form :model="loginUser" :rules="rules" ref="loginUser" label-width="80px" class="demo-ruleForm">
                     <el-form-item label="邮箱" prop="email">
                         <el-input v-model="loginUser.email"></el-input>
@@ -12,14 +11,13 @@
                     </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="submitForm('loginUser')">登录</el-button>
-                        <el-button @click="resetForm('loginUser')">重置</el-button>
+                        <el-button type="warning" @click="resetForm('loginUser')">重置</el-button>
                     </el-form-item>
                     <div class="bottom">
                         <p>还没有账号?现在<router-link to="/register">注册=></router-link>
                         </p>
                     </div>
                 </el-form>
-            </div>
         </div>
     </div>
 </template>
@@ -100,12 +98,13 @@
         background: url(../assets/bg.jpg) no-repeat center center;
         background-size: 100% 100%;
     }
-
     .form_container {
+        background-color: rgb(244,244,244);
+        opacity: 0.95;
         width: 450px;
-        height: 350px;
-        margin: 3.5% auto;
-        padding: 50px;
+        height: 300px;
+        margin: 7% auto;
+        padding: 40px;
         border-radius: 5px;
         text-align: center;
     }
@@ -118,7 +117,7 @@
         font-family: 'Microsoft YaHei';
         font-weight: 600;
         font-size: 26px;
-        color: #ccc;
+        color: #888888;
         white-space: nowrap;
     }
 

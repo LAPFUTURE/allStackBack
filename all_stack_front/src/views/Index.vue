@@ -1,8 +1,10 @@
 <template>
-    <div class="index">
+    <div>
         <HeadNav></HeadNav>
-        <left></left>  
-        <router-view></router-view>
+        <left></left>
+        <div class="content">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -17,4 +19,15 @@
         }
     }
 </script>
+<style>
+    .content{
+        background-image: url(../assets/sea.jpg);
+        background-size: 100% 100%;
+        height: 100%;
+        min-height: 720px;
+        overflow: hidden;
+        max-width: 300;
+        margin-left: 200px;
+    }
+</style>
 

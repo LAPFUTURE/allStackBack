@@ -2,15 +2,15 @@
     <header class="head-nav">
         <img :src="user.avatar" class="avatar">
         <el-row>
-            <el-col :span="2" class="logo-containner">
+            <el-col :span="3" class="logo-containner">
                <img src="../assets/bg.jpg" class="logo">
             </el-col>
-            <el-col :span="19" class="center">
+            <el-col :span="18" class="center">
                <div class="title">LAP ManageSystem</div>
             </el-col>
             <el-col :span="3" class="right">
                     <div class="welcome">
-                        <p>欢迎您,{{ user.name }}</p>
+                        <p>Welcome,{{ user.name }}</p>
                     </div>
                     <div class="dropdown">
                         <el-dropdown @command="handleCommand" trigger="click">
@@ -18,8 +18,8 @@
                             <i class="el-icon-arrow-down el-icon--right"></i>
                             </span>
                             <el-dropdown-menu slot="dropdown">
-                                <el-dropdown-item command="info">个人信息</el-dropdown-item>
-                                <el-dropdown-item command="logout">退出</el-dropdown-item>
+                                <el-dropdown-item command="info">Personal</el-dropdown-item>
+                                <el-dropdown-item command="logout">Logout</el-dropdown-item>
                             </el-dropdown-menu>
                         </el-dropdown>
                     </div>
@@ -60,7 +60,6 @@
 
 <style scoped>
     .head-nav{
-        /* width:100%; */
         height: 60px;
         min-width: 600px;
         margin-right: 60px;
@@ -75,7 +74,9 @@
     }
     .logo-containner{
         height:60px;
+        padding-left:20px; 
         line-height: 60px;
+        text-align: center;
     }
     .logo{
         width: 60px;

@@ -7,7 +7,7 @@ import Register from './views/Register.vue'
 import Login from './views/Login.vue'
 import NotFound from './views/NotFound.vue'
 import FoodSelector from './views/FoodSelector.vue'
-
+import FundList from './views/FundList.vue'
 
 Vue.use(Router)
 
@@ -35,8 +35,15 @@ const router = new Router({
           path:'/infoshow',
           name:'infoshow',
           component:InfoShow
+        },{
+          path:'/fundlist',
+          name:"FundList",
+          component:FundList
+        },{
+          path:'/foodselector',
+          name:"FoodSelector",
+          component:FoodSelector
         }
-
       ]
     },
     {
@@ -53,11 +60,6 @@ const router = new Router({
       path:'/Login',
       name:"Login",
       component:Login
-    },
-    {
-      path:'/FoodSelector',
-      name:"FoodSelector",
-      component:FoodSelector
     }
   ]
 });
