@@ -7,8 +7,9 @@
                 </div>
             </el-col>
             <el-col :span="16" class="right">
-                <div class="name">{{ user.name }}</div>
-                <div class="identity">{{ user.identity }}</div>
+                <div class="name"><i class="el-icon-edit"> {{ user.name }}</i></div>
+                
+                <div class="identity"><i class="el-icon-setting"></i> {{ user.identity }}</div>
             </el-col>
         </el-row>
     </div>
