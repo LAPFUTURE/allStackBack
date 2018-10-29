@@ -7,7 +7,7 @@
                 <el-form-item>
                         <el-button type="primary"  v-on:click="filters()">筛选</el-button>                    </el-button>
                     </el-form-item>
-                <el-form-item class="add">
+                <el-form-item class="add" v-if="user.identity == 'admin'">
                     <el-button type="primary" size="mini" v-on:click="handleAdd()">添加</el-button>                    </el-button>
                 </el-form-item>
             </el-form>
@@ -38,7 +38,7 @@
                 </template>
             </el-table-column>
             <el-table-column prop="remark" label="Remark" width="150" align="center"></el-table-column>
-            <el-table-column prop="operation" label="Operation" fixed="right" align="center">
+            <el-table-column prop="operation" label="Operation" fixed="right" align="center" v-if="user.identity == 'admin'">
                 <template slot-scope="scope">
                     <el-button type="primary" size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
                     <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
@@ -65,6 +65,9 @@
         },
         created() {
             this.getProfile();
+        },
+        computed(){
+            user:this.$store.getters.user;
         },
         data() {
             return {
@@ -108,10 +111,9 @@
                 let begin = this.begin.getTime();
                 let end = this.end.getTime();
                 this.allTableData = this.filterTableData.filter( (item)=>{
-                    console.log(item);
-                    // let date = new Date(item.date);
-                    // let time = date.getTime();
-                    // return time >= begin && time<= end;
+                    let date = new Date(item.date);
+                    let time = date.getTime();
+                    return time >= begin && time<= end;
                 });
                 this.setPagination();
             },
@@ -119,7 +121,7 @@
                 this.$axios.get("/api/profile/allProfile")
                     .then((res) => {
                         this.allTableData = res.data.profile;
-                        this.filterTableData = res.data.getProfile;
+                        this.filterTableData = res.data.profile;
                         this.setPagination();
                     })
                     .catch((err) => {
