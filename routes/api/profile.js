@@ -20,7 +20,7 @@ router.post("/add",passport.authenticate("jwt",{session:false}),(req,res)=>{
     if(req.body.remark){profileFields.remark = req.body.remark}
     
     new Profile(profileFields).save().then(profile=>{
-        res.json({"msg":"add success","profileFields":profileFields});
+        res.json({"msg":1,"profileFields":profileFields});
     })
 })
 

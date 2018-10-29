@@ -8,7 +8,6 @@
             </el-col>
             <el-col :span="16" class="right">
                 <div class="name"><i class="el-icon-edit"> {{ user.name }}</i></div>
-                
                 <div class="identity"><i class="el-icon-setting"></i> {{ user.identity }}</div>
             </el-col>
         </el-row>
@@ -29,8 +28,6 @@
     }
 </script>
 <style scoped>
-    .infoshow {
-    }
     .avatar-container{
         text-align: center;
         margin-top:50%;
@@ -44,7 +41,6 @@
         min-height: 720px;
     }
     .right{
-        opacity: 0.75;
         background-color: transparent;
     }
     .name{

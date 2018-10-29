@@ -60,17 +60,20 @@
                     if (valid) {
                         this.$axios.post('/api/users/login', this.loginUser)
                             .then((res) => {
-                                let { token } = res.data;
-                                localStorage.setItem('eleToken', token);//存储token
-                                let decoded = jwt_decode(token);//解析token
-                                this.$store.dispatch('setAuthenticated',!this.isEmpty(decoded)); 
-                                this.$store.dispatch('setUser',decoded);
-                                
-                                this.$message({
-                                    message: '登录成功',
-                                    type: 'success'
-                                });
-                                this.$router.push('/index');
+                                if(res.data.status === 1){
+                                    let { token } = res.data;
+                                    localStorage.setItem('eleToken', token);//存储token
+                                    let decoded = jwt_decode(token);//解析token
+                                    this.$store.dispatch('setAuthenticated',!this.isEmpty(decoded)); 
+                                    this.$store.dispatch('setUser',decoded);
+                                    this.$message({
+                                        message: '登录成功',
+                                        type: 'success'
+                                    });
+                                    this.$router.push('/index');
+                                }else{
+                                    this.$message.error('请检查账号或密码');
+                                }
                             })
                     }
                 })
