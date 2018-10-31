@@ -15,6 +15,7 @@ mongoose.connect(db)
 //路由
 const users = require("./routes/api/users");
 const profile = require("./routes/api/profile");
+const food = require("./routes/api/food");
 
 app.get("/",(req,res)=>{
      res.send("Node is running,hello!");
@@ -28,6 +29,7 @@ app.use(bodyParser.json());
 //使用路由中间件
 app.use("/api/users",users);
 app.use("/api/profile",profile);
+app.use("/api/food",food);
 
 //passport初始化
 app.use(passport.initialize());

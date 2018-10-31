@@ -39,6 +39,7 @@ router.post("/register",(req,res)=>{
 });
 
 router.post("/login",(req,res)=>{
+    console.log(req);
     let md5Password =  MD5(MD5(req.body.password) + "lap");
     User.findOne({email:req.body.email})
         .then((user)=>{

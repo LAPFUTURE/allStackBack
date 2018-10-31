@@ -17,7 +17,7 @@ const router = new Router({
   routes: [
     {
       path:'/',
-      redirect:"/index"
+      redirect:"/login"
     },
     {
       path:'/index',
