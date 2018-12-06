@@ -8,7 +8,7 @@
     "all_stack_front": "npm start --prefix all_stack_front",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run all_stack_front\" "
+    "all": "concurrently \"npm run server\" \"npm run all_stack_front\" "
   },
   "author": "lap",
   "license": "ISC",

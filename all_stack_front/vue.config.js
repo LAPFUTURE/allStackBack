@@ -27,13 +27,13 @@ module.exports = {
     },
     devServer:{
         open:true,
-        host:'localhost',
+        host:'127.0.0.1',
         port: 8080,
         https:false,
         hotOnly:false,
         proxy:{
             '/api':{
-                target:'http://localhost:5000/api',
+                target:'http://www.connectyoume.top:5001/api',
                 ws:true,
                 changeOrigin:true,
                 pathRewrite:{

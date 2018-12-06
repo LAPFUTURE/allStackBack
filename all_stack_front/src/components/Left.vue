@@ -58,9 +58,12 @@
 <style scoped>
     .el-menu-vertical-demo{
         width: 200px;
+        position: absolute;
+        
         min-height: 720px;
         text-align: center;
-        position: absolute;
+        
+
         border-right: 0px;
     }
     .ahref{

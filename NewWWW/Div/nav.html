@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>二级导航</title>
+        <style><!--
+        ul.hidden{display:none;}
+        --></style>
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+            <li>
+                <a href="#">2</a>
+                <ul class="hidden">
+                    <li>2-1<li>
+                    <li>3-1<li>
+                </ul>
+            </li>
+            <li>3</li>
+            <li>4</li>
+        <ul>
+
+    <script>
+        const APP = {};
+        APP.elements = {};
+        APP.events = {};
+
+        APP.elements.alla = document.querySelectorAll("a");
+        APP.elements.liUl = document.querySelectorAll("li>ul");
+
+        APP.events.showUl = function(){
+            console.log(this);
+        };
+        
+        APP.elements.alla.addEventListener("click",APP.events.showUl);
+        
+    </script>
+    </body>
+</html>

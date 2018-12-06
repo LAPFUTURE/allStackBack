@@ -8,7 +8,7 @@ const key = require("../../config/keys");
 const passport= require("passport"); 
 
 router.get("/test",(req,res)=>{
-    res.json({path:"/test"});
+    res.json({path:"/test",env:"127.0.0.1"});
 });
 
 router.get("/",(req,res)=>{
@@ -39,7 +39,6 @@ router.post("/register",(req,res)=>{
 });
 
 router.post("/login",(req,res)=>{
-    console.log(req);
     let md5Password =  MD5(MD5(req.body.password) + "lap");
     User.findOne({email:req.body.email})
         .then((user)=>{
