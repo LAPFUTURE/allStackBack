@@ -32,9 +32,9 @@
                     <span style="color:#ff4400;">{{ scope.row.expend }}</span>
                 </template>
             </el-table-column>
-            <el-table-column prop="cash" label="Now" width="100" align="center">
+            <el-table-column prop="now" label="Now" width="100" align="center">
                 <template slot-scope="scope">
-                    <span style="color:rgb(64, 158, 255);">{{ scope.row.cash }}</span>
+                    <span style="color:rgb(64, 158, 255);">{{ scope.row }}{{ scope.row.now }}</span>
                 </template>
             </el-table-column>
             <el-table-column prop="remark" label="Remark" width="150" align="center"></el-table-column>
@@ -121,6 +121,7 @@
                 this.$axios.get("/api/profile/allProfile")
                     .then((res) => {
                         this.allTableData = res.data.profile;
+                        
                         this.filterTableData = res.data.profile;
                         this.setPagination();
                     })

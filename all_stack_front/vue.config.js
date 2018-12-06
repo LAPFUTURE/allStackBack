@@ -33,7 +33,8 @@ module.exports = {
         hotOnly:false,
         proxy:{
             '/api':{
-                target:'http://www.connectyoume.top:5001/api',
+                // target:'http://www.connectyoume.top:5001/api',
+                target:'http://localhost:5001/api',
                 ws:true,
                 changeOrigin:true,
                 pathRewrite:{

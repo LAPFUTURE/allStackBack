@@ -57,13 +57,10 @@
 </script>
 <style scoped>
     .el-menu-vertical-demo{
-        width: 200px;
+        width: 20vh;
         position: absolute;
-        
-        min-height: 720px;
+        height: 90vh;;
         text-align: center;
-        
-
         border-right: 0px;
     }
     .ahref{

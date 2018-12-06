@@ -24,10 +24,10 @@
         background-image: url(../assets/sea.jpg);
         background-size: 100% 100%;
         height: 100%;
-        min-height: 720px;
+        height: 90vh;
         overflow: hidden;
         max-width: 300;
-        margin-left: 200px;
+        margin-left: 20vh;
     }
 </style>
 

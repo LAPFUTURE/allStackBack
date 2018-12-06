@@ -8,7 +8,7 @@ const ProfileSchema = new Schema({
        type:String,
        required:true
     },
-    incode:{
+    income:{
         type:String,
         // required:true
     },
@@ -16,7 +16,7 @@ const ProfileSchema = new Schema({
         type:String,
         // required:true
     },
-    cash:{
+    now:{
         type:String,
         // required:true
     },

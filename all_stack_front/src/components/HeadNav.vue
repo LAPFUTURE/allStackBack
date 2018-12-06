@@ -60,45 +60,45 @@
 
 <style scoped>
     .head-nav{
-        height: 60px;
+        height: 10vh;
         min-width: 600px;
-        margin-right: 60px;
+        margin-right: 10vh;
         background: #409EFF;
     }
     .avatar{
-        height:60px;
+        height:10vh;
         position: absolute;
         right: 0px;
         float: right;
         background-color: black;
     }
     .logo-containner{
-        height:60px;
+        height:10vh;
         padding-left:20px; 
-        line-height: 60px;
+        line-height: 10vh;
         text-align: center;
     }
     .logo{
-        width: 60px;
-        height: 60px;
+        width: 10vh;
+        height: 10vh;
         border-radius: 50%;
     }
     .title{
         display: inline-block;
         white-space: nowrap;
-        height:60px;
-        line-height: 60px;
+        height:10vh;
+        line-height: 10vh;
     }
     .welcome{
         display: inline-block;
-        height:60px;
-        line-height: 60px;
+        height:10vh;
+        line-height: 10vh;
         font-size: 16px;
     }
     .dropdown{
         display:inline-block;
-        height:60px;
-        line-height: 60px;
+        height:10vh;
+        line-height: 10vh;
     }
     .right{
         text-align: right;
