@@ -21,6 +21,9 @@ router.post("/addshop",(req,res)=>{
     });
 });
 
-
+router.post("/fileupload",(req,res)=>{
+    console.log("success");
+    return res.json({"status":-1,"message":"返回成功"});
+});
 
 module.exports = router;

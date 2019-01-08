@@ -1,7 +1,11 @@
 <template>
     <div class="foodselector">
-        <p>{{ nowTime }}</p>
+        <!-- <p>{{ nowTime }}</p> -->
         <button @click="addfood()">addfood</button>
+        <form ref="fileform">
+            <input type="file" name="file"/>
+            <input type="submit" @click="uploadFile" value="提交"/>
+        </form>
     </div>
 </template>
 
@@ -28,7 +32,18 @@
                 .catch((err)=>{
                     console.log("err:",err);
                 })
-            }
+            },
+            uploadFile(ev){
+                let formData = new FormData(this.$refs['fileform']);
+                // console.log(formData.get('file'));
+                this.$fileAxios.post("http://www.connectyoume.top:5001/api/food/fileupload",formData).
+                then((response)=>{
+                    console.log(response);
+                });
+                ev.preventDefault();
+                return false;
+            },
+
         },
         computed:{
         }
