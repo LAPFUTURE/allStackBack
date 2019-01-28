@@ -18,7 +18,9 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
+    "compression-webpack-plugin": "^2.0.0",
     "eslint": "^5.7.0",
+    "image-webpack-loader": "^4.6.0",
     "vue-template-compiler": "^2.5.17"
   },
   "postcss": {
