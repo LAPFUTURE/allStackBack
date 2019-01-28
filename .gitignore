@@ -2,7 +2,7 @@
 node_modules/
 /dist/
 npm-debug.log*
-/NewWWW
+NewWWW/
 
 # Editor directories and files
 .vscode
